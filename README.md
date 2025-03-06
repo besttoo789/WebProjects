@@ -95,3 +95,34 @@ office-management-system-frontend/
 ├── angular.json                          # การตั้งค่า Angular
 ├── package.json                          # Dependencies
 └── tsconfig.json                         # การตั้งค่า TypeScript
+
+
+office-management-system-backend/
+├── main.go                               # ไฟล์หลัก รันเซิร์ฟเวอร์
+├── models/                               # โมเดลข้อมูล
+│   ├── user.go                           # โมเดลบุคลากร
+│   ├── department.go                     # โมเดลหน่วยงาน
+│   ├── unit.go                           # โมเดลหน่วยนับ
+│   ├── item.go                           # โมเดลวัสดุ/ครุภัณฑ์
+│   └── request.go                        # โมเดลคำขอ (เบิก/ยืม)
+├── handlers/                             # API Handlers
+│   ├── auth.go                           # ล็อกอิน
+│   ├── users.go                          # จัดการบุคลากร
+│   ├── departments.go                    # จัดการหน่วยงาน
+│   ├── units.go                          # จัดการหน่วยนับ
+│   ├── items.go                          # จัดการวัสดุ/ครุภัณฑ์
+│   ├── stock.go                          # จัดการสต๊อก
+│   ├── borrow.go                         # จัดการยืม-คืน
+│   ├── withdraw.go                       # จัดการเบิก-จ่าย
+│   ├── dashboard.go                      # ข้อมูล Dashboard
+│   └── reports.go                        # รายงาน
+├── db/                                   # การเชื่อมต่อฐานข้อมูล
+│   └── db.go                             # Config การเชื่อมต่อ
+├── middleware/                           # Middleware
+│   ├── auth.go                           # ตรวจสอบ JWT
+│   └── role.go                           # ตรวจสอบ Role (Admin/Staff)
+├── utils/                                # ฟังก์ชันช่วย
+│   ├── export.go                         # Export รายงาน (Excel)
+│   └── response.go                       # จัดการ Response
+├── go.mod                                # Dependencies
+└── go.sum                                # Checksum
